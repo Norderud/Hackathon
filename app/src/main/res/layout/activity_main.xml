@@ -32,35 +32,40 @@
 
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab3"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:id="@+id/logoutFBA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
         android:layout_gravity="bottom|end"
         android:layout_margin="5dp"
         android:onClick="logout"
         app:srcCompat="@android:drawable/ic_btn_speak_now" />
+        app:srcCompat="@drawable/ic_logout" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab2"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:id="@+id/statistic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
         android:layout_gravity="bottom|end"
         android:layout_margin="5dp"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
+        app:srcCompat="@drawable/ic_statistic" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab1"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:id="@+id/newNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="mini"
         android:layout_gravity="bottom|end"
         android:layout_margin="5dp"
-        app:srcCompat="@android:drawable/ic_dialog_map" />
+        android:onClick="newNote"
+        app:srcCompat="@drawable/ic_new_note" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@drawable/ic_expand" />
 
 </FrameLayout>

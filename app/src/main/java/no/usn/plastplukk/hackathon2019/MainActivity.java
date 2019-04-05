@@ -116,10 +116,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initiateButtons() {
-        menu = findViewById(R.id.fab);
-        newNote = findViewById(R.id.fab1);
-        arkiv = findViewById(R.id.fab2);
-        logout = findViewById(R.id.fab3);
+        menu = findViewById(R.id.menu);
+        newNote = findViewById(R.id.newNote);
+        arkiv = findViewById(R.id.statistic);
+        logout = findViewById(R.id.logoutFBA);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -146,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
         logout.animate().translationY(0);
         arkiv.animate().translationY(0);
         newNote.animate().translationY(0);
+        menu.setScaleY(-1);
     }
 
 
@@ -156,5 +157,10 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
 
         startActivity(new Intent(this, MainActivity.class));
+    }
+
+    public void newNote(View view) {
+        Intent newNoteIntent = new Intent(this, newNoteActivity.class);
+        startActivity(newNoteIntent);
     }
 }
