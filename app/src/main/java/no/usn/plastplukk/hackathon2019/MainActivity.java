@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private void initiateButtons() {
         menu = findViewById(R.id.menu);
         newNote = findViewById(R.id.newNote);
-        arkiv = findViewById(R.id.arkiv);
+        arkiv = findViewById(R.id.statistic);
         logout = findViewById(R.id.logoutFBA);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,5 +67,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
+    }
+
+    public void newNote(View view) {
+        Intent newNoteIntent = new Intent(this, newNoteActivity.class);
+        startActivity(newNoteIntent);
     }
 }
