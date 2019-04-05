@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegisterRequest extends StringRequest {
-    private static final String REGISTER_URL = "https://itfag.usn.no/grupper/v19gr2/plast/itfag/register.php";
+    private static final String REGISTER_URL = "https://itfag.usn.no/~161741/hackathon2019/register.php";
     private Map<String, String> params;
 
     public RegisterRequest(String user, String password, Response.Listener<String> listener){

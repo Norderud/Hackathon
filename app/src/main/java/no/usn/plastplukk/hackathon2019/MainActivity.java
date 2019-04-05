@@ -1,12 +1,17 @@
 package no.usn.plastplukk.hackathon2019;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.support.design.widget.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences prefs;
+
+
     FloatingActionButton menu, arkiv, newNote, logout;
     boolean isFABOpen;
     @Override
@@ -52,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
     public void login(View view) {
         Intent loginIntent = new Intent(this, LoginActivity.class);
         startActivity(loginIntent);
+
+
+        prefs = getSharedPreferences("MyPrefsName", MODE_PRIVATE);
+
+        if (prefs.getString("Username", "").length() == 0){
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
 
     }
 }
