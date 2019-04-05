@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_user);
+        setContentView(R.layout.activity_register);
 
         etUser = findViewById(R.id.etUser);
         etPassword1 = findViewById(R.id.etPassword1);
@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void registerUser(View view) {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getActiveNetwork() == null){
-            Toast.makeText(getApplicationContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Du er ikke koblet til internett.", Toast.LENGTH_SHORT).show();
             return;
         }
         final String user = etUser.getText().toString();
@@ -52,15 +52,15 @@ public class RegisterActivity extends AppCompatActivity {
         final String password2 = etPassword2.getText().toString();
 
         if(user.isEmpty() || password1.isEmpty() || password2.isEmpty()){
-            alertDialog(getString(R.string.fyll_ut_alle_felt));
+            alertDialog("Alle feltene må fylles ut");
             return;
         }
         if(!isValidPassword(password1)){
-            alertDialog(getString(R.string.passord_sjekk));
+            alertDialog("Passordet må inneholde minst en bokstav og 6 tall.");
             return;
         }
         if(!password1.equals(password2)){
-            alertDialog(getString(R.string.passord_match));
+            alertDialog("Passordene må være like");
             return;
         }
 
@@ -72,11 +72,11 @@ public class RegisterActivity extends AppCompatActivity {
                     boolean success = jsonResponse.getBoolean("success");
                     String error = jsonResponse.getString("error");
                     if(success){
-                        Toast.makeText(RegisterUserActivity.this, getString(R.string.registrering_vellykket), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(RegisterUserActivity.this, LoginActivity.class);
-                        RegisterUserActivity.this.startActivity(intent);
+                        Toast.makeText(RegisterActivity.this, "Registrering vellykket", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        RegisterActivity.this.startActivity(intent);
                     } else{
-                        alertDialog(getString(R.string.registrering_feilet) + "\n"+ error);
+                        alertDialog("Registrering feilet" + "\n"+ error);
                     }
 
                 } catch (JSONException e) {
@@ -85,7 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         };
         RegisterRequest registerRequest = new RegisterRequest(user, password1, responseListener);
-        RequestQueue queue = Volley.newRequestQueue(RegisterUserActivity.this);
+        RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
         queue.add(registerRequest);
     }
 
@@ -100,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void alertDialog(String message){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(message)
-                .setNegativeButton(R.string.prov_igjen, null)
+                .setNegativeButton("Prøv igjen", null)
                 .create()
                 .show();
     }
