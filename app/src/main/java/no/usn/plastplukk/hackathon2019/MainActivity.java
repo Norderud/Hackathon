@@ -7,18 +7,21 @@ import android.view.View;
 import android.support.design.widget.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
-    FloatingActionButton fab1, fab2, fab3;
+    FloatingActionButton menu, arkiv, newNote, logout;
     boolean isFABOpen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        isFABOpen = false;
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab1 = (FloatingActionButton) findViewById(R.id.fab1);
-        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
-        fab3 = (FloatingActionButton) findViewById(R.id.fab3);
-        fab.setOnClickListener(new View.OnClickListener() {
+        initiateButtons();
+    }
+
+    private void initiateButtons() {
+        menu = findViewById(R.id.fab);
+        newNote = findViewById(R.id.fab1);
+        arkiv = findViewById(R.id.fab2);
+        logout = findViewById(R.id.fab3);
+        menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!isFABOpen){
@@ -29,22 +32,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void showFABMenu(){
-        isFABOpen=true;
-        fab1.animate().translationY(-55);
-        fab2.animate().translationY(-105);
-        fab3.animate().translationY(-155);
+
+    private void showFABMenu() {
+        isFABOpen = true;
+        logout.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
+        arkiv.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
+        newNote.animate().translationY(-getResources().getDimension(R.dimen.standard_155));
+        menu.setScaleY(1);
     }
 
     private void closeFABMenu(){
         isFABOpen=false;
-        fab1.animate().translationY(0);
-        fab2.animate().translationY(0);
-        fab3.animate().translationY(0);
+        menu.animate().translationY(0);
+        logout.animate().translationY(0);
+        arkiv.animate().translationY(0);
+        newNote.animate().translationY(0);
     }
 
     public void login(View view) {
         Intent loginIntent = new Intent(this, LoginActivity.class);
+        startActivity(loginIntent);
 
     }
 }
