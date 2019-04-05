@@ -1,5 +1,6 @@
 package no.usn.plastplukk.hackathon2019;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
