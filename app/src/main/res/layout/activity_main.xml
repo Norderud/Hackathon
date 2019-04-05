@@ -13,6 +13,7 @@
         android:layout_height="45dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="5dp"
+        android:onClick="login"
         app:srcCompat="@android:drawable/ic_btn_speak_now" />
 
     <android.support.design.widget.FloatingActionButton
@@ -36,6 +37,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_margin="5dp"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 </LinearLayout>

@@ -1,5 +1,6 @@
 package no.usn.plastplukk.hackathon2019;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -40,5 +41,10 @@ public class MainActivity extends AppCompatActivity {
         fab1.animate().translationY(0);
         fab2.animate().translationY(0);
         fab3.animate().translationY(0);
+    }
+
+    public void login(View view) {
+        Intent loginIntent = new Intent(this, LoginActivity.class);
+
     }
 }
