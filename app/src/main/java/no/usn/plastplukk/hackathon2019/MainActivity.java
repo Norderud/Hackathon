@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void newNote(View view) {
-        Intent newNoteIntent = new Intent(this, newNoteActivity.class);
+        Intent newNoteIntent = new Intent(this, NewNoteActivity.class);
         startActivity(newNoteIntent);
     }
 }
