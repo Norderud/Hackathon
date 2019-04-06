@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -61,7 +62,8 @@ public class RegisterActivity extends AppCompatActivity {
             IMAGE_WIDTH = "imageWidth", IMAGE_HEIGHT = "imageHeight";
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
-    Button takePictureButton, confirmPictureButton;
+    Button confirmPictureButton;
+    ImageButton takePictureButton;
     private String encodedImage;
 
 
@@ -233,7 +235,6 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            takePictureButton.setText("Ta nytt bilde");
             confirmPictureButton.setVisibility(View.VISIBLE);
             Bitmap bitmap = HelpFunctions.loadImageFromFile(imageView, currentPhotoPath, imageView.getWidth(), imageView.getHeight());
             imageView.setVisibility(View.VISIBLE);
