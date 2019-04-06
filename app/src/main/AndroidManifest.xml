@@ -22,6 +22,7 @@
         <activity android:name=".Pop"
             android:theme="@style/AppTheme.PopupTheme"></activity>
         <activity android:name=".LoginActivity" />
+        <activity android:name=".NewNoteActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
