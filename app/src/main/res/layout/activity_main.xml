@@ -39,7 +39,6 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="5dp"
         android:onClick="logout"
-        app:srcCompat="@android:drawable/ic_btn_speak_now" />
         app:srcCompat="@drawable/ic_logout" />
 
     <android.support.design.widget.FloatingActionButton

@@ -1,12 +1,10 @@
 package no.usn.plastplukk.hackathon2019;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 public class Pop extends AppCompatActivity {
 
@@ -27,7 +25,7 @@ public class Pop extends AppCompatActivity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width*.9), (int) (height*.9));
+        getWindow().setLayout((int) (width*.9), (int) (height*.65));
 
         String tittel = getIntent().getStringExtra("Tittel");
         String tekst = getIntent().getStringExtra("Tekst");

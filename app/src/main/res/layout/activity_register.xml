@@ -10,11 +10,16 @@
     android:weightSum="1"
     tools:context=".RegisterActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".1"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.8"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -85,17 +90,38 @@
                     android:paddingStart="10dp" />
             </android.support.design.widget.TextInputLayout>
 
-            <Button
-                android:layout_marginTop="10dp"
-                android:id="@+id/bRegister"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/login_buttons_selector"
-                android:onClick="registerUser"
-                android:text="Registrer"
-                android:textColor="#FFFFFF"
-                android:fontFamily="@font/comfortaa_bold"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".15"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/bTakePicture"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/login_buttons_selector"
+                    android:text="Ta profilbilde"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/comfortaa_bold"
+                    />
+                <Button
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/videreFraKamera"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/login_buttons_selector"
+                    android:text="Registrer"
+                    android:textColor="#FFFFFF"
+                    android:fontFamily="@font/comfortaa_bold"
+                    android:visibility="invisible"
+                    />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/photoDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
