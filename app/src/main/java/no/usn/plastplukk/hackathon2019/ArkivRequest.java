@@ -9,7 +9,7 @@ import com.android.volley.toolbox.StringRequest;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//Klasse for å sende forespørsel til php-scriptet om å hente notater fra databasen
 public class ArkivRequest extends StringRequest {
     private static final String ARKIV_REQUEST_URL = "https://itfag.usn.no/~161741/hackathon2019/getArkiv.php";
     private Map<String, String> params;

@@ -21,7 +21,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import static java.lang.Integer.parseInt;
-
+//Viser hvor mange ganger brukeren har postet med ulike moods
+//Enten siste uke eller nåværende måned
 public class StatistikkActivity extends AppCompatActivity {
 
     TextView mood1, mood2, mood3, mood4, mood5;
@@ -46,7 +47,8 @@ public class StatistikkActivity extends AppCompatActivity {
         getArkiv();
 
     }
-
+    //Henter notater fra databasen
+    //Legger til antall verdier til ulike moods
     private void getArkiv() {
         antallMood1 = 0;
         antallMood2 = 0;

@@ -7,7 +7,7 @@ import com.android.volley.toolbox.StringRequest;
 
 import java.util.HashMap;
 import java.util.Map;
-
+// Sender forespørsel til php-scriptet som tar av seg registrering
 public class RegisterRequest extends StringRequest {
     private static final String REGISTER_URL = "https://itfag.usn.no/~161741/hackathon2019/register.php";
     private Map<String, String> params;

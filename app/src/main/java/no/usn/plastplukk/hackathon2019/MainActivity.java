@@ -19,7 +19,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences prefs;
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Oppretter arkive som en liste som skal vises
     private void defineList(final String[] tittelTabell, final String[] tekstTabell, final int[] moodTabell, final String[] datoTabell){
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, datoTabell);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, tittelTabell);
         arkivListe.setAdapter(arrayAdapter);
 
         arkivListe.setOnItemClickListener(new AdapterView.OnItemClickListener() {

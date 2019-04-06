@@ -7,10 +7,8 @@ import android.util.DisplayMetrics;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-
+// En klasse som får opp pop-up vindu av et notat
 public class Pop extends AppCompatActivity {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
