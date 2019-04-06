@@ -24,6 +24,12 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".NewNoteActivity"
             android:parentActivityName=".MainActivity"/>
+        <activity android:name=".StatistikkActivity"></activity>
+        <activity android:name=".NewNoteActivity" />
+        <activity
+            android:name=".Pop"
+            android:theme="@style/AppTheme.PopupTheme" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,5 +1,6 @@
 package no.usn.plastplukk.hackathon2019;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -38,4 +39,5 @@ public class Pop extends AppCompatActivity {
         bunnText.setText("Dato: " + dato +"          Mood: " + mood);
 
     }
+
 }
