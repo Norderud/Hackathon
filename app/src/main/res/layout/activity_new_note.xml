@@ -3,16 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="10">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="80dp"
         android:orientation="horizontal"
-        android:layout_weight="1"
-        android:padding="10dp"
         >
         <EditText
+            android:id="@+id/titleText"
             android:hint="Tittel"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -20,6 +19,7 @@
             android:layout_weight="6"
             android:layout_height="wrap_content" />
         <SeekBar
+            android:id="@+id/moodbar"
             android:layout_marginTop="20dp"
             android:layout_width="0dp"
             android:layout_weight="4"
@@ -31,7 +31,7 @@
         android:id="@+id/editor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9" />
+        android:layout_weight="8.5" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,7 +60,7 @@
             android:layout_height="match_parent"
             android:background="@color/colorGray"
             android:src="@drawable/ic_image"
-            android:onClick="addPhoto" />
+            android:onClick="addImage" />
         <Button
             android:id="@+id/lagreNotat"
             android:layout_width="match_parent"
