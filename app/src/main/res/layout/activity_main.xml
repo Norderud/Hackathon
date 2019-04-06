@@ -48,6 +48,7 @@
         app:fabSize="mini"
         android:layout_gravity="bottom|end"
         android:layout_margin="5dp"
+        android:onClick="statstikk"
         app:srcCompat="@drawable/ic_statistic" />
 
     <android.support.design.widget.FloatingActionButton

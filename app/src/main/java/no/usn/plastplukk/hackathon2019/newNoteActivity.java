@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import net.dankito.richtexteditor.android.RichTextEditor;
 
-public class NewNoteActivity extends AppCompatActivity {
+public class newNoteActivity extends AppCompatActivity {
 
     private RichTextEditor editor;
     private boolean isBold, isItalic;

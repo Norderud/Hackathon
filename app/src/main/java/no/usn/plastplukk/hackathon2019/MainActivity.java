@@ -163,4 +163,9 @@ public class MainActivity extends AppCompatActivity {
         Intent newNoteIntent = new Intent(this, NewNoteActivity.class);
         startActivity(newNoteIntent);
     }
+
+    public void statstikk(View view) {
+        Intent statistikkIntent = new Intent(this, StatistikkActivity.class);
+        startActivity(statistikkIntent);
+    }
 }
