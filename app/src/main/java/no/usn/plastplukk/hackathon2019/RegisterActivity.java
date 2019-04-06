@@ -46,7 +46,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
-
+//Registrer bruker aktivitet
 public class RegisterActivity extends AppCompatActivity {
     EditText etUser;
     EditText etPassword1;
@@ -94,7 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
+    // Metode for å registrer bruker med div feilhåndtering
     public void registerUser(View view) {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getActiveNetwork() == null){
@@ -143,7 +143,7 @@ public class RegisterActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
         queue.add(registerRequest);
     }
-
+    //Metode for å sjekke passord
     private boolean isValidPassword(String password1) {
         String regex = "^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,}$";
         if(Pattern.matches(regex, password1)){
@@ -175,7 +175,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
     }
-
+    //Metode for å opprette et bilde lokalt på mobilen, lagrer path
     private File createImageFile() throws IOException {
         // Create an image file name
         String state = Environment.getExternalStorageState();
@@ -193,7 +193,7 @@ public class RegisterActivity extends AppCompatActivity {
         }
         throw new IOException();
     }
-
+    // Spør om rettigheter
     private void requestMultiplePermissions(){
         Dexter.withActivity(this)
                 .withPermissions(
@@ -231,6 +231,7 @@ public class RegisterActivity extends AppCompatActivity {
                 .check();
     }
 
+    // Kjøres når bilde har blitt tatt. Viser bilde som imageview. Komprimerer bilde og konverterer til en bytestream.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
