@@ -40,9 +40,4 @@ public class Pop extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed(){
-        Intent mainActivityIntent = new Intent(this, MainActivity.class);
-        startActivity(mainActivityIntent);
-    }
 }

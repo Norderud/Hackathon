@@ -20,18 +20,29 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".2"
+        android:orientation="horizontal"
+        android:weightSum="1"
         android:gravity="center">
         <Button
-            android:layout_width="wrap_content"
+            android:tag="Uke"
+            android:id="@+id/ukeKnapp"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
             android:layout_height="match_parent"
             android:textSize="20sp"
             android:text="Uke"
-            android:onClick="Uke"/>
+            android:background="@drawable/login_buttons_selector"
+            android:onClick="Sorter"/>
         <Button
-            android:layout_width="wrap_content"
+            android:tag="Måned"
+            android:id="@+id/månedKnapp"
+            android:layout_width="0dp"
+            android:layout_weight=".5"
             android:layout_height="match_parent"
             android:textSize="20sp"
-            android:text="Måned"/>
+            android:background="@drawable/login_buttons_selector"
+            android:text="Måned"
+            android:onClick="Sorter"/>
     </LinearLayout>
     <TextView
         android:id="@+id/mood1"
