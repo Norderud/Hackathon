@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         layout = findViewById(R.id.mainLayout);
         arkivListe = findViewById(R.id.arkivListID);
 
+        // Hvis du ikke er logget inn, send til logg inn aktivitet
         if (prefs.getString("Username", "").length() == 0){
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // Oppretter arkive som en liste som skal vises
     private void defineList(final String[] tittelTabell, final String[] tekstTabell, final int[] moodTabell, final String[] datoTabell){
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, datoTabell);
         arkivListe.setAdapter(arrayAdapter);
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Henter arkivet med notater fra databasen
     private void getArkiv() {
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -114,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
+    // Oppretter knapper
     private void initiateButtons() {
         menu = findViewById(R.id.menu);
         newNote = findViewById(R.id.newNote);
@@ -131,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Viser menyen av floating action bars
     private void showFABMenu() {
         isFABOpen = true;
         logout.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
@@ -139,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
         menu.setScaleY(1);
     }
 
+    // Lukker menyen
     private void closeFABMenu(){
         isFABOpen=false;
         menu.animate().translationY(0);
@@ -149,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    // Logger ut fra brukeren
     public void logout(View view) {
 
         SharedPreferences.Editor editor = prefs.edit();
@@ -158,11 +165,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
     }
 
+    // Gå til aktivitet for å opprette nytt innlegg
     public void newNote(View view) {
         Intent newNoteIntent = new Intent(this, NewNoteActivity.class);
         startActivity(newNoteIntent);
     }
 
+    // Gå til statistikk aktiviteten
     public void statstikk(View view) {
         Intent statistikkIntent = new Intent(this, StatistikkActivity.class);
         startActivity(statistikkIntent);

@@ -37,11 +37,13 @@ public class LoginActivity extends AppCompatActivity {
         moveTaskToBack(true);
     }
 
+    // Registrer knappen
     public void sendToRegister(View view) {
         Intent registerIntent = new Intent(this, RegisterActivity.class);
         startActivity(registerIntent);
     }
 
+    // Logg inn knappen
     public void logIn(View view) {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager.getActiveNetwork() == null) {
@@ -52,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         final String username = etUser.getText().toString();
         String password = etPassword1.getText().toString();
 
+        // Sender forespørsel til PHP-skript med brukernavn og passord for sjekk
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

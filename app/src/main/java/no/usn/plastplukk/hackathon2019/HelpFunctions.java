@@ -12,17 +12,17 @@ public class HelpFunctions {
 
     public static Bitmap loadImageFromFile(ImageView imageView, String currentPhotoPath, int targetW, int targetH) {
 
-        // Get the dimensions of the bitmap
+        // Henter høyde og bredde
         BitmapFactory.Options bmOptions = new BitmapFactory.Options();
         bmOptions.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(currentPhotoPath, bmOptions);
         int photoW = bmOptions.outWidth;
         int photoH = bmOptions.outHeight;
 
-        // Determine how much to scale down the image
+        // Hvor mye bildet skal skaleres
         int scaleFactor = Math.min(photoW / targetW, photoH / targetH);
 
-        // Decode the image file into a Bitmap sized to fill the View
+        // Dekoder bildefilen for å passe viewet
         bmOptions.inJustDecodeBounds = false;
         bmOptions.inSampleSize = scaleFactor;
 
@@ -30,8 +30,9 @@ public class HelpFunctions {
         bitmap = imageOreintationValidator(bitmap, currentPhotoPath);
         return bitmap;
     }
-    private static Bitmap imageOreintationValidator(Bitmap bitmap, String path) {
 
+    //En av metodene for å rotere bildet
+    private static Bitmap imageOreintationValidator(Bitmap bitmap, String path) {
         ExifInterface ei;
         try {
             ei = new ExifInterface(path);
@@ -55,6 +56,7 @@ public class HelpFunctions {
         return bitmap;
     }
 
+    // En av metodene for å rotere bildet
     private static Bitmap rotateImage(Bitmap source, float angle) {
 
         Bitmap bitmap = null;
