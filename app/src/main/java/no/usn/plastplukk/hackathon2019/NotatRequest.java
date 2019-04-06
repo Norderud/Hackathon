@@ -10,7 +10,7 @@ import com.android.volley.toolbox.StringRequest;
 
 import java.util.HashMap;
 import java.util.Map;
-
+// Klasse for å håndtere ny notat-request som skal sendes til database
 public class NotatRequest extends StringRequest {
     private static final String NOTAT_REQUEST_URL = "https://itfag.usn.no/~161741/hackathon2019/insertNotat.php";
     private Map<String, String> params;

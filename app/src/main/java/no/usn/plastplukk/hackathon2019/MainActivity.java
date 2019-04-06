@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+        moveTaskToBack(true);
+    }
+
     // Oppretter arkive som en liste som skal vises
     private void defineList(final String[] tittelTabell, final String[] tekstTabell, final int[] moodTabell, final String[] datoTabell){
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, datoTabell);

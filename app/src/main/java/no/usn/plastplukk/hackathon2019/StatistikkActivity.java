@@ -111,7 +111,7 @@ public class StatistikkActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(arkivRequest);
     }
-
+    // Sorterer etter måned/uke
     public void Sorter(View view) {
         String tag = view.getTag().toString();
         if (tag.equals("Uke")) {
