@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initiateButtons();
-
+        menu.setScaleY(-1); 
         prefs = getSharedPreferences("MyPrefsName", MODE_PRIVATE);
 
         layout = findViewById(R.id.mainLayout);

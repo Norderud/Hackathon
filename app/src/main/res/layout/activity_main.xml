@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         app:fabSize="mini"
         android:layout_gravity="bottom|end"
-        android:layout_margin="5dp"
+        android:layout_margin="30dp"
         android:onClick="logout"
         app:srcCompat="@drawable/ic_logout" />
 
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         app:fabSize="mini"
         android:layout_gravity="bottom|end"
-        android:layout_margin="5dp"
+        android:layout_margin="30dp"
         android:onClick="statstikk"
         app:srcCompat="@drawable/ic_statistic" />
 
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         app:fabSize="mini"
         android:layout_gravity="bottom|end"
-        android:layout_margin="5dp"
+        android:layout_margin="30dp"
         android:onClick="newNote"
         app:srcCompat="@drawable/ic_new_note" />
 
@@ -66,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        app:srcCompat="@drawable/ic_expand" />
+        app:srcCompat="@drawable/ic_expand"
+        android:layout_margin="20dp"/>
 
 </FrameLayout>
