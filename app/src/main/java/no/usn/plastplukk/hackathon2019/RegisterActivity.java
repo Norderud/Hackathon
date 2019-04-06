@@ -140,7 +140,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         };
         RegisterRequest registerRequest = new RegisterRequest(user, password1, imageFileName, encodedImage, responseListener);
-        Log.e("EncodedImage", prefs.getString("EncodedImage", "Heihei"));
         RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
         queue.add(registerRequest);
     }
