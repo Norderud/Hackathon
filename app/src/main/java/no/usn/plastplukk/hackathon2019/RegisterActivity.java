@@ -122,7 +122,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 try {
-                    Log.e("Response", response);
+                    Log.e("Response", "ASD");
                     JSONObject jsonResponse = new JSONObject(response);
                     boolean success = jsonResponse.getBoolean("success");
                     String error = jsonResponse.getString("error");

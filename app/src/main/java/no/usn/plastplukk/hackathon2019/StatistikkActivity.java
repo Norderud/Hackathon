@@ -116,14 +116,14 @@ public class StatistikkActivity extends AppCompatActivity {
         String tag = view.getTag().toString();
         if (tag.equals("Uke")) {
             uke = true;
-            ukeKnapp.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            ukeKnapp.setBackground(getResources().getDrawable(R.color.colorGreen));
             månedKnapp.setBackground(getResources().getDrawable(R.color.colorGray));
 
         }
         if (tag.equals("Måned")) {
             måned = true;
-            ukeKnapp.setBackground(getResources().getDrawable(R.drawable.login_buttons));
-            månedKnapp.setBackground(getResources().getDrawable(R.drawable.login_buttons_pressed));
+            ukeKnapp.setBackground(getResources().getDrawable(R.color.colorGray));
+            månedKnapp.setBackground(getResources().getDrawable(R.color.colorGreen));
         }
         getArkiv();
     }
