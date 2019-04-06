@@ -1,28 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".newNoteActivity">
+    android:weightSum="10">
 
-    <EditText
-        android:id="@+id/titleET"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Title" />
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:padding="10dp"
+        >
+        <EditText
+            android:hint="Tittel"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="wrap_content" />
+        <SeekBar
+            android:layout_marginTop="20dp"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="wrap_content"
+            android:max="5"
+            />
+    </LinearLayout>
+    <net.dankito.richtexteditor.android.RichTextEditor
+        android:id="@+id/editor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9" />
 
-    <EditText
-        android:id="@+id/text"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/boldButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:onClick="boldText"
-        android:text="Bold"
-        />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/boldButton"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:onClick="boldText"
+            android:background="@color/colorGray"
+            android:text="Bold"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/italicButton"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:onClick="italicText"
+            android:text="Italic"
+            android:textStyle="italic" />
+        <ImageButton
+            android:id="@+id/addPhoto"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorGray"
+            android:src="@drawable/ic_image"
+            android:onClick="addPhoto" />
+        <Button
+            android:id="@+id/lagreNotat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:onClick="lagreNotat"
+            android:text="Lagre notat" />
+    </LinearLayout>
 
 </LinearLayout>
