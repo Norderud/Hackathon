@@ -95,13 +95,14 @@
                 android:layout_height="0dp"
                 android:layout_weight=".15"
                 android:orientation="horizontal">
-                <Button
+                <ImageButton
                     android:layout_marginTop="10dp"
                     android:id="@+id/bTakePicture"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/login_buttons_selector"
-                    android:text="Ta profilbilde"
+                    android:background="@drawable/camera_buttons"
+                    android:text=""
+                    android:src="@drawable/ic_camera"
                     android:textColor="#FFFFFF"
                     android:fontFamily="@font/comfortaa_bold"
                     />
