@@ -116,8 +116,8 @@ public class StatistikkActivity extends AppCompatActivity {
         String tag = view.getTag().toString();
         if (tag.equals("Uke")) {
             uke = true;
-            ukeKnapp.setBackground(getResources().getDrawable(R.drawable.login_buttons_pressed));
-            månedKnapp.setBackground(getResources().getDrawable(R.drawable.login_buttons));
+            ukeKnapp.setBackgroundColor(getResources().getColor(R.color.colorGreen));
+            månedKnapp.setBackground(getResources().getDrawable(R.color.colorGray));
 
         }
         if (tag.equals("Måned")) {
