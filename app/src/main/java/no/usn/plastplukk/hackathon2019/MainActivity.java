@@ -40,13 +40,12 @@ public class MainActivity extends AppCompatActivity {
         layout = findViewById(R.id.mainLayout);
         arkivListe = findViewById(R.id.arkivListID);
 
-
-        getArkiv();
-
         if (prefs.getString("Username", "").length() == 0){
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         }
+
+        getArkiv();
 
     }
 

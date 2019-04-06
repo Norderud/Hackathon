@@ -33,11 +33,6 @@ public class StatistikkActivity extends AppCompatActivity {
 
         getArkiv();
 
-        mood1.setText("Mood 1: " + antallMood1);
-        mood2.setText("Mood 2: " + antallMood2);
-        mood3.setText("Mood 3: " + antallMood3);
-        mood4.setText("Mood 4: " + antallMood4);
-        mood5.setText("Mood 5: " + antallMood5);
     }
 
     private void getArkiv() {
@@ -59,6 +54,7 @@ public class StatistikkActivity extends AppCompatActivity {
                             JSONArray arkivArray = jsonObject.getJSONArray(""+(i+1));
                             moodTabell[i] = arkivArray.getInt(2);
                             datoTabell[i] = arkivArray.getString(3).substring(0, 10);
+                            Log.e("Mood", ""+i+": "+moodTabell[i]);
                             switch(moodTabell[i]){
                                 case 1: antallMood1++; break;
                                 case 2: antallMood2++; break;
@@ -67,6 +63,11 @@ public class StatistikkActivity extends AppCompatActivity {
                                 case 5: antallMood5++; break;
                             }
                         }
+                        mood1.setText("Mood 1: " + antallMood1);
+                        mood2.setText("Mood 2: " + antallMood2);
+                        mood3.setText("Mood 3: " + antallMood3);
+                        mood4.setText("Mood 4: " + antallMood4);
+                        mood5.setText("Mood 5: " + antallMood5);
                     } else {
                         String error = jsonResponse.getString("error");
                     }
@@ -76,7 +77,7 @@ public class StatistikkActivity extends AppCompatActivity {
             }
         };
 
-        ArkivRequest arkivRequest = new ArkivRequest(""+ getSharedPreferences("MyPrefsFile", MODE_PRIVATE)
+        ArkivRequest arkivRequest = new ArkivRequest(""+ getSharedPreferences("MyPrefsName", MODE_PRIVATE)
                 .getInt("UserID", 0),
                 responseListener, null);
         RequestQueue queue = Volley.newRequestQueue(this);

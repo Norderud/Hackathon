@@ -1,5 +1,6 @@
 package no.usn.plastplukk.hackathon2019;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -37,5 +38,11 @@ public class Pop extends AppCompatActivity {
         tekstText.loadData(tekst, "text/html; charset=utf-8", "utf-8");
         bunnText.setText("Dato: " + dato +"          Mood: " + mood);
 
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent mainActivityIntent = new Intent(this, MainActivity.class);
+        startActivity(mainActivityIntent);
     }
 }
