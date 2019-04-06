@@ -10,6 +10,7 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+// SKript for å sende forespørsel til php
 public class LoginRequest extends StringRequest {
     private static final String LOGIN_REQUEST_URL = "https://itfag.usn.no/~161741/hackathon2019/login.php";
     private Map<String, String> params;
