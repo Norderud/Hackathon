@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:id="@+id/mainLayout">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".1"
+            android:text="ARKIV"
+            android:gravity="center"
+            android:textSize="30sp"/>
+
+
+        <ListView
+            android:id="@+id/arkivListID"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".8"></ListView>
+
+    </LinearLayout>
+
+
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/logoutFBA"
         android:layout_width="wrap_content"
@@ -13,7 +38,7 @@
         app:fabSize="mini"
         android:layout_gravity="bottom|end"
         android:layout_margin="5dp"
-        android:onClick="login"
+        android:onClick="logout"
         app:srcCompat="@drawable/ic_logout" />
 
     <android.support.design.widget.FloatingActionButton
